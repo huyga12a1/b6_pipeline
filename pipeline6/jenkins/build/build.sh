@@ -1,8 +1,8 @@
 #!/bin/bash
 # Copy the new jar to the build location
 export BUILD_TAG=test
-cp -f ./java-app/target/*.jar .
+cp -f pipeline6/java-app/target/*.jar pipeline6/jenkins/build/
 echo "****************************"
 echo "** Building Docker Image ***"
 echo "****************************"
-docker-compose -f docker-compose-build.yml build #--no-cache
+cd pipeline6/jenkins/build/ && docker-compose -f docker-compose-build.yml build #--no-cache
